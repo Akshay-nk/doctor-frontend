@@ -37,7 +37,7 @@ console.log(booking);
       {
         booking.map((item)=>(
          <div className=' border-2 border-green-600 w-full'>
-           <h2>{item.doctor.name}</h2>
+           <h2 key={item._id}>{item.doctor.name}</h2>
           <p>{item.doctor.timeSlots[1]}</p>
          </div>
          

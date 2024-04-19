@@ -61,8 +61,29 @@ const Checkout = ({ doctor }) => {
 
 
     let params = useParams()
-    const id = params.id;
+    const id = params.id
+    console.log(typeof(id));
 
+
+    // const handleBooking = async () => {
+    //     try {
+    //         const reqHeader = {
+    //             "Content-Type": "application/json",
+    //             "Authorization": `Bearer ${token}`
+    //         };
+           
+    //         const result = await bookingAPI(id,reqHeader);
+    
+    //         if(result.status===200) {
+    //             console.log(result.data);
+    //         } else {
+    //             console.error("Unexpected status code:", result.status);
+    //             console.error("Response data:", result.data);
+    //         }
+    //     } catch (error) {
+    //         console.error("An error occurred during the booking request:", error);
+    //     }
+    // };
 
     const handleBooking = async () => {
         try {
@@ -71,10 +92,11 @@ const Checkout = ({ doctor }) => {
                 "Authorization": `Bearer ${token}`
             };
            
-            const result = await bookingAPI(id,reqHeader);
-    
+            const result = await bookingAPI(id, reqHeader);
+            console.log("Response:", result); // Log the entire response
+            
             if (result.status === 200) {
-                console.log(result.data);
+                console.log("Booking successful:", result.data);
             } else {
                 console.error("Unexpected status code:", result.status);
                 console.error("Response data:", result.data);
@@ -83,6 +105,7 @@ const Checkout = ({ doctor }) => {
             console.error("An error occurred during the booking request:", error);
         }
     };
+    
     
 
 

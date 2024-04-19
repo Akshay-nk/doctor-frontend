@@ -1,5 +1,5 @@
 import { BASEURL } from "./BASE_URL"
-import { commonAPI } from "./commonAPI"
+import { BOOKAPI, commonAPI } from "./commonAPI"
 
 
 
@@ -40,9 +40,9 @@ export const getAllDoctorsAPI = async(reqHeader)=>{
 export const getOneDoctorAPI =async (id,reqHeader )=>{
    return await commonAPI("GET",`${BASEURL}/doctor/${id}`,"",reqHeader);
 }
-//boking
+//booking
 export const bookingAPI = async(id,reqHeader)=> {
-     return await commonAPI("POST",`${BASEURL}/booking/${id}`,"",reqHeader);
+     return await BOOKAPI("POST",`${BASEURL}/booking/${id}`,reqHeader);
  }
 
  //get booking
