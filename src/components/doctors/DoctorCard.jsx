@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import {BsArrowRight} from 'react-icons/bs'
 
 
-const DoctorCard = ({doctor}) => {
+const DoctorCard = ({doctor,insideAdmin}) => {
 
     const{
         name,
@@ -41,6 +41,11 @@ const DoctorCard = ({doctor}) => {
                   justify-center group hover:bg-blue-600'> 
                     <BsArrowRight className='group-hover:text-white w-6 h-5' />
                  </Link>
+                 {
+                  insideAdmin &&
+                  <button  className='btn btn-outline align-items-right border items-center 
+                  justify-center'>DELETE</button>
+                 }
         </span>
       </div>
 

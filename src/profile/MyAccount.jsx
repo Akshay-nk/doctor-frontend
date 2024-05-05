@@ -68,7 +68,7 @@ const MyAccount = () => {
             </div>
             <div>
               <button className='btn' onClick={handleLogout}>Logout</button>
-              <button className='btn' >Delete Account</button>
+             
             </div>
           </div>
         </div>

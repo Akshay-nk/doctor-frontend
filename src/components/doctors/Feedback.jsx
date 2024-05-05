@@ -13,21 +13,20 @@ const [feedbackForm,setFeedbackForm]=useState(false)
 const [review,setReview]=useState([])
 
 let params=useParams()
-  const doctor=params.id;
-  console.log(doctor);
+  const id=params.id;
+  console.log(id);
 
 const getAllReviews=async()=>{
   if(sessionStorage.getItem("token")){
     const token=sessionStorage.getItem("token")
 
-    const reqBody = { doctor: doctor };
-    console.log("heyrequest", reqBody);
+    
     
     const reqHeader={
       "Content-Type":"application/json",
       "Authorization":`Bearer ${token}`
     }
-    const result=await getAllReviewAPI(reqBody,reqHeader)
+    const result=await getAllReviewAPI(id,reqHeader)
     if(result.status===200){
       setReview(result.data)
     }else{
@@ -39,7 +38,7 @@ const getAllReviews=async()=>{
 //console.log(allProjects)
 useEffect(()=>{
  getAllReviews()
-},[])
+},[review])
 
 
   return (
@@ -59,7 +58,7 @@ useEffect(()=>{
           </figure>
         <div className='flex flex-col'>
             <h5 className='font-bold text-primaryColor'>
-              Ali Ahmed
+              {review.user.name}
             </h5>
             <p className='text-textColor text-[12px]'>
               {review.createdAt}

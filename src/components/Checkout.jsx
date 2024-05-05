@@ -12,7 +12,7 @@ const Checkout = ({ doctor }) => {
     const navigate = useNavigate()
 
     const token=sessionStorage.getItem("token")
-   
+   console.log(token);
        
 
 
@@ -33,8 +33,8 @@ const Checkout = ({ doctor }) => {
             purchase_units: [
                 {
                     amount: {
-                        value: doctor.ticketPrice.toString(),
-                        currency_code: currency
+                        value: 50,
+                        // currency_code: currency
                     },
                 },
             ],

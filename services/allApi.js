@@ -26,8 +26,8 @@ export const addReviewAPI = async(reqBody,reqHeader)=>{
 }
 
 //review get
-export const getAllReviewAPI = async(reqBody,reqHeader)=>{
-    return await commonAPI("GET",`${BASEURL}/review/all/`,reqBody,reqHeader)
+export const getAllReviewAPI = async(id,reqHeader)=>{
+    return await commonAPI("GET",`${BASEURL}/review/all/${id}`,"",reqHeader)
 }
 
 //get doctors
